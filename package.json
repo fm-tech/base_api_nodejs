@@ -1,5 +1,5 @@
 {
-  "name": "Base Node API Server",
+  "name": "BaseNodeAPI",
   "version": "1.0.0",
   "description": "Base application API Node JS",
   "main": "index.js",
