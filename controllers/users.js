@@ -76,29 +76,4 @@ module.exports = {
   },
   logout: (req, res, next) => {},
   append: (req, res, next) => {},
-  profile: (req, res, next) => {
-    const data = body.data;
-    User.findOne({ username: data.username })
-      .populate("User")
-      .exec(function (err, foundUser) {
-        if (err) {
-          console.log(err);
-        } else {
-          res.send(foundUser);
-        }
-      });
-  },
-  // This will modify the run a modifier operater that represents modified pen charge
-  modifyPenCharge: (req, res, next) => {
-    const data = body.data;
-    User.findById(id, function (err, foundUser) {
-      if (err) {
-        console.log(err);
-      } else {
-        foundUser.pens[0].charge - data.number;
-        foundUser.save();
-        res.send({ sucess: "it works" });
-      }
-    });
-  },
 };
