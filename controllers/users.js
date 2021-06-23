@@ -1,8 +1,6 @@
 const User = require("../models/user/users");
 const passport = require("passport");
 
-const config = require("../config/index");
-
 module.exports = {
   register: (req, res, next) => {
     const user = req.body;
