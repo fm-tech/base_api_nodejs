@@ -10,8 +10,6 @@ const bodyParser = require("body-parser");
 const session = require("express-session");
 const passport = require("passport");
 
-const config = require("./config");
-
 //Configure mongoose's promise to global promise
 mongoose.promise = global.Promise;
 
@@ -49,7 +47,7 @@ var usersRoutes = require("./routes/users");
 var port = process.env.PORT || 9090; // set our port
 
 // Database setup
-mongoose.connect(config.DB_URI, {
+mongoose.connect(process.env.DB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 }); //No password used to keep this example short
